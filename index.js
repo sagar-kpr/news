@@ -33,7 +33,9 @@ app.listen(port, (err) => {
 })
 
 
+//https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=60d3cca075f3445c93f289dd4d3ab6c2
 
+//http://api.mediastack.com/v1/news?access_key=734e162d5d8de371d445d25caa088ed7&keywords=tennis&countries=in
 
 
 
