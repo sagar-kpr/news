@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://files.codingninjas.com/circut-9740.png), linear-gradient(#032d6b, #032d6b), linear-gradient(to left bottom, #032d6b 50%, #faf7f2 0px), linear-gradient(to right bottom, #032d6b 50%, #faf7f2 0px);
+  background-repeat: no-repeat;
+}
