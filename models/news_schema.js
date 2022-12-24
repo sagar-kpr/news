@@ -8,10 +8,14 @@ const news_schema = new mongoose.Schema({
     },
     image : {
         type : Number,
-        required: true,
     },
     content :{
         type : String,
+        
+    },
+    url: {
+        type : String,
+        
     }
     
 },{
