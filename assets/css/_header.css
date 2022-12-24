@@ -36,18 +36,68 @@ nav #inp-container {
 }
 
 nav #inp-container form {
-  width: 90%;
+  width: 70%;
   height: 80%;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav #inp-container form input[type='search'] {
-  width: 60%;
-  height: 70%;
+  width: 88%;
+  height: 90%;
   padding: 5px;
 }
 
 nav #inp-container form input[type='submit'] {
   width: 100px;
-  height: 70%;
+  height: 90%;
   padding: 5px;
+  margin-right: 5px;
+}
+
+nav #inp-container #filter-box {
+  width: 100px;
+  position: relative;
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav #inp-container #filter-box #filter {
+  width: auto;
+  height: 100px;
+  position: absolute;
+  top: 22px;
+  background-color: whitesmoke;
+  z-index: 1;
+  display: none;
+  transition: .5s ease-in-out;
+  color: black;
+}
+
+nav #inp-container #filter-box #filter #radio-btns {
+  display: flex;
+  flex-direction: column;
+}
+
+nav #inp-container #filter-box #filter #radio-btns div {
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+}
+
+nav #inp-container #filter-box #filter #radio-btns div input[type=button] {
+  margin: 5px;
+  background-color: black;
+  color: white;
+  width: 95%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav #inp-container #filter-box:hover #filter {
+  display: block;
 }

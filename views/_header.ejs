@@ -5,9 +5,33 @@
         <p>News</p>
     </div>
     <div id="inp-container">
-        <form>
+        <form action="">
             <input type="search" placeholder="search">
             <input type="submit" value="search">
         </form>
+        <div id="filter-box">
+            <span onclick="expand">Filter <i class="fa-solid fa-filter"></i></span>
+            <div id="filter">
+                <div id="radio-btns">
+                    <div >
+                        <input type="radio" id="Sports" name="common" value="sports">
+                        <label for="Sports">Sports</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="General" name="common" value="general">
+                        <label for="General">General</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="Entertainment" name="common" value="entertainment">
+                    <label for="Entertainment">Entertainment</label>
+                    </div>
+                    <div>
+                        <input type="button" id="button" value="Apply">
+                    </div>
+                </div>    
+            </div>
+        </div>
     </div>
 </nav>
+
+<script src="/js/header.js"></script>

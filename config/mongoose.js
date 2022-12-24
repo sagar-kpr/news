@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
-mongoose.connect("mongodb://localhost/news");
+mongoose.connect("mongodb://localhost/mynews");
 
 const db = mongoose.connection;
 

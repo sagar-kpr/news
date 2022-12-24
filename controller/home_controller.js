@@ -3,34 +3,50 @@ const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('60d3cca075f3445c93f289dd4d3ab6c2');
 const News = require('../models/news_schema');
 
-var user;
 
-module.exports.home =  function(req,res){
-    newsapi.v2.topHeadlines({
-        country: 'in',
-      }).then(response => {
-        const article = response.articles
-        const arr = [...article]
-        arr.filter( async (article) => {
-            News.findOne({title: article.title }, function(err,user){
-                if(err) { console.log('err in finding title'); return }
-                if(!user){
-                    News.create({
-                        title: article.title,
-                        image: article.urlToImage,
-                        content: article.content,
-                        url : article.url
-                    }, function(err, found){
-                        if(err) { console.log('err in finding news'); return }
-                        console.log('qqqqq', found)
-                        return res.render('Home'); 
-                    })
-                }
-
-            })
-            
-        })
+module.exports.home = async function (req, res) {
+    await newsapi.v2.topHeadlines({
+        country: 'in'
+    }).then(async response => {
+       
+        let article = response.articles;
         
-      });
-     
+        for(let i=0; i< article.length; i++){
+            const data = {
+                title: article[i].title,
+                image : article[i].urlToImage,
+                content: article[i].content,
+                url : article[i].url
+            }
+            if(!data.image){
+                data.image = 'not avail'
+            }else if(!data.content){
+                data.content = 'not avail'
+            }else if(!data.url){
+                data.url = 'not avail'
+            }
+            const test =  await News.findOne({title:data.title})
+            console.log('66660',article[i])
+            if(!test){
+                const newData =  new News(data);
+                newData.save();
+                console.log('888888',newData)
+            }
+            
+
+        }
+       
+    });
+    console.log('11111')
+    let news = await News.find();
+    
+    return res.render('Home',{
+        data:news
+    });
+
 }
+
+
+
+
+

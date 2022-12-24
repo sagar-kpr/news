@@ -28,21 +28,77 @@ nav{
         height: inherit;
         display: flex;
         align-items: center;
-      
 
+       // border: 1px solid white;
         form{
-            width: 90%;
+            width: 70%;
             height: 80%;
-          
+           // border: 1px solid white;
+            display: flex;
+            justify-content: space-between;
             input[type='search']{
-                width:60%;
-                height: 70%;
+                width:88%;
+                height: 90%;
                 padding: 5px;
             }
             input[type='submit']{
                 width: 100px;
-                height: 70%;
+                height: 90%;
                 padding: 5px;
+                margin-right: 5px;
+            }
+        }
+        #filter-box{
+            width:100px;
+           position: relative;
+           //border: 1px solid white;
+            color: white;
+            //display: flex;
+            text-align: center;
+            //justify-content: center;
+            //align-items: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            #filter{
+                width:auto;
+                height: 100px;
+                
+                position: absolute;
+                top:22px;
+                background-color: whitesmoke;
+                z-index: 1;
+                display: none;
+                transition: .5s ease-in-out;
+                color:  black;
+                #radio-btns{
+                    display: flex;
+                    flex-direction: column;
+                    div{
+                        width: 150px;
+                        display: flex;
+                        flex-direction: row;
+                        input[type=button]{
+                            margin: 5px;
+                            background-color: black;
+                            color: white;
+                            width: 95%;
+                            border-radius: 10px;
+                            cursor: pointer;
+                            font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        }
+                        
+                    }
+                    
+                }
+
+            }
+            
+            
+        }
+        #filter-box:hover{
+            #filter{
+                display: block;
             }
         }
     }

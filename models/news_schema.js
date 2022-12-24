@@ -5,17 +5,21 @@ const news_schema = new mongoose.Schema({
         type : String,
         required: true,
         unique: true
+
     },
     image : {
-        type : Number,
+        type : String,
+        required: true,
     },
     content :{
         type : String,
+        required: true,
         
     },
     url: {
         type : String,
-        
+        required: true,
+
     }
     
 },{
