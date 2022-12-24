@@ -1,8 +1,26 @@
 <link rel="stylesheet" type="text/css"  href="/css/home.css">
 
 
-<div>
-    <h1>sagar</h1>
-</div>
+<main>
+    <div id="top-news">
+        <h1>Top News</h1>
+        <hr>
+    </div>
+    <div id="news-container">
+        <% for(let i=0; i< data.length; i++) { %>
+            <div id="news">
+                <h3><%=data[i].title  %></h3>
+                <img src="<%= data[i].urlToImage%>" alt="Not available"/>
+                <div id="description">
+                    <p><%= data[i].content %> &nbsp<a href="<%= data[i].url %>"  target="_blank">Read more...</a></p>
+                </div>
+            </div>
+
+        <% } %>
+        
+    </div>
+    
+</main>
+
 
 

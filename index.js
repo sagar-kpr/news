@@ -1,10 +1,15 @@
 const express = require('express');
 const port = 2000;
+const db = require('./config/mongoose');
 const app = express();
 const parser = require('body-parser');
 const nodeSass = require('node-sass-middleware');
 const expressLayout = require('express-ejs-layouts');
 const path = require('path');
+
+
+
+
 
 
 app.use(nodeSass({

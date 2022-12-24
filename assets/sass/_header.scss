@@ -5,15 +5,46 @@ nav{
     background-image: linear-gradient(130deg, #222151 0%, #032D6B 100%);
     box-sizing: border-box;
     box-shadow: 0 0 1px 0px #222151;
-    p{
-        font-size: 1.7rem;
-        font-weight: 600;
-        color: white;
-        margin: 0;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    #logo{
+        width:200px;
+        height: inherit;
+        p{
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: white;
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        p:first-letter{
+            font-size: 2rem;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
     }
-    p:first-letter{
-        font-size: 2rem;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    #inp-container{
+        width:80%;
+        height: inherit;
+        display: flex;
+        align-items: center;
+      
+
+        form{
+            width: 90%;
+            height: 80%;
+          
+            input[type='search']{
+                width:60%;
+                height: 70%;
+                padding: 5px;
+            }
+            input[type='submit']{
+                width: 100px;
+                height: 70%;
+                padding: 5px;
+            }
+        }
     }
+    
 }

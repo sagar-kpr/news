@@ -1,9 +1,61 @@
-div{
+::-webkit-scrollbar {
+    width: 10px;
+  }
+main{
     width:100%;
     height: 100%;
-    
-    h1{
-        color: red;
+   
+    background-image: url(https://files.codingninjas.com/circut-9740.png), linear-gradient(rgb(3, 45, 107), rgb(3, 45, 107)), linear-gradient(to left bottom, rgb(3, 45, 107) 50%, rgb(250, 247, 242) 0px), linear-gradient(to right bottom, rgb(3, 45, 107) 50%, rgb(250, 247, 242) 0px);
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    #top-news{
+        width: 70%;
+        h1{
+            font-weight: 600;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+    }
+    #news-container{
+        width:70%;
+        height: 100%;
+       // border:1px solid red;
+        overflow: scroll;
+        overflow-x: hidden;
+        #news{
+            //border: 1px solid white;
+            width: 90%;
+            height: auto;
+            background-color: white;
+            border-radius: 10px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            h3{
+                width: 95%;
+                padding: 5px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            img{
+                width: 95%;
+                height: 95%;
+                object-fit: cover;
+            }
+            #description{
+                width:95%;
+                padding: 5px;
+                text-align: justify;
+                font-family: Mulish, Roboto, "Helvetica Neue", sans-serif;
+            }
+
+
+        }
     }
 }
 
