@@ -129,3 +129,9 @@
         }
     }
 }
+
+@media screen and (max-width:950px) {
+    #left, #right{
+        display: none;
+    }
+}

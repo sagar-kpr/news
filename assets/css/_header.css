@@ -44,6 +44,7 @@ nav #inp-container form {
   width: 70%;
   height: 80%;
   display: flex;
+  margin-top: 5px;
   justify-content: space-between;
 }
 
@@ -52,7 +53,8 @@ nav #inp-container form input[type='search'] {
   height: 90%;
   padding: 5px;
   font-size: 1.2rem;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
+  border: none;
 }
 
 nav #inp-container form input[type='search']:focus {
@@ -65,19 +67,24 @@ nav #inp-container form input[type='submit'] {
   padding: 5px;
   font-size: 1.2rem;
   margin-right: 5px;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
   background-color: black;
   color: white;
+  border: none;
 }
 
 nav #inp-container #filter-box {
-  width: 120px;
+  width: auto;
   position: relative;
   color: white;
   text-align: center;
   font-size: 1.1rem;
   cursor: pointer;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav #inp-container #filter-box #icon {
+  display: none;
 }
 
 nav #inp-container #filter-box #filter {
@@ -98,17 +105,19 @@ nav #inp-container #filter-box #filter {
 nav #inp-container #filter-box #filter #radio-btns {
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
 }
 
 nav #inp-container #filter-box #filter #radio-btns div {
-  width: 200px;
+  width: 180px;
   display: flex;
   height: 35px;
   flex-direction: row;
   margin-bottom: 5px;
+  border-radius: 5px;
 }
 
-nav #inp-container #filter-box #filter #radio-btns div input[type=button] {
+nav #inp-container #filter-box #filter #radio-btns div input[type=submit] {
   margin: 5px;
   background-color: black;
   color: white;
@@ -132,4 +141,36 @@ nav #inp-container #filter-box #filter #radio-btns #inp-box:hover {
 
 nav #inp-container #filter-box:hover #filter {
   display: block;
+}
+
+@media screen and (max-width: 850px) {
+  #filter-box #filter {
+    right: 0px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+  }
+  nav #inp-container {
+    width: 100%;
+    border: 1px solid white;
+  }
+  nav #inp-container form {
+    width: 85%;
+  }
+  nav #inp-container form input[type='search'] {
+    width: 1000%;
+  }
+  nav #inp-container #filter-box {
+    width: 40px;
+  }
+  nav #inp-container #filter-box span {
+    display: none;
+  }
+  nav #inp-container #filter-box #icon {
+    display: block;
+  }
 }

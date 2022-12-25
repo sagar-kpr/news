@@ -117,3 +117,9 @@
   font-family: Mulish, Roboto, "Helvetica Neue", sans-serif;
   color: #777;
 }
+
+@media screen and (max-width: 950px) {
+  #left, #right {
+    display: none;
+  }
+}
