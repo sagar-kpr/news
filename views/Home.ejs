@@ -1,28 +1,31 @@
 <link rel="stylesheet" type="text/css"  href="/css/home.css">
 
-
+<%- include('asideLeft') %>
 <main>
-    <div id="top-news">
-        <h1>Top News</h1>
-        <hr>
-    </div>
-    <div id="news-container">
-        <%  for(let i=0; i< data.length; i++){ %>
-            <div id="news">
-                <h3><%= data[i].title %></h3>
-                <img src="<%= data[i].image %>"/>
-                <div id="description">
-                    <p><%= data[i].content %> <a href="<%= data[i].url %>" target="_blank">Read more...</a></p>
+    <div id="box">
+        <div id="top-news">
+            <h1>Top News</h1>
+            <hr>
+        </div>
+        <div id="news-container">
+            <%  for(let i=0; i< data.length; i++){ %>
+                <div id="news">
+                    <h3><%= data[i].title %></h3>
+                    <img src="<%= data[i].urlToImage %>"/>
+                    <div id="description">
+                        <p><%= data[i].content %> <a href="<%= data[i].url %>" target="_blank">Read more...</a></p>
+                    </div>
                 </div>
-            </div>
 
-        <%} %>
-            
-      
+            <%} %>
+                
         
+            
+        </div>
     </div>
+
     
 </main>
-
+<%- include('asideRight') %>
 
 

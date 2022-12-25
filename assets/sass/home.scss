@@ -2,60 +2,80 @@
     width: 10px;
   }
 main{
-    width:100%;
+    /*width:50%;
     height: 100%;
-   
+    border:1px solid red;
     background-image: url(https://files.codingninjas.com/circut-9740.png), linear-gradient(rgb(3, 45, 107), rgb(3, 45, 107)), linear-gradient(to left bottom, rgb(3, 45, 107) 50%, rgb(250, 247, 242) 0px), linear-gradient(to right bottom, rgb(3, 45, 107) 50%, rgb(250, 247, 242) 0px);
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
+    margin-left: 25%;
     justify-content: center;
     flex-direction: column;
     position: relative;
-    #top-news{
-        width: 70%;
-        h1{
-            font-weight: 600;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: white;
-        }
-    }
-    #news-container{
-        width:70%;
-        height: 100%;
-       // border:1px solid red;
-        overflow: scroll;
-        overflow-x: hidden;
-        #news{
-            //border: 1px solid white;
-            width: 90%;
-            height: auto;
-            background-color: white;
-            border-radius: 10px;
-            margin: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            h3{
-                width: 95%;
-                padding: 5px;
+    vertical-align: top;*/
+    width: 50%;
+    display: inline-block;
+    vertical-align:top;
+    margin-left:25%;
+    margin-top: 4%; 
+    position: relative;
+    
+    ///border:1px solid red;
+    #box{
+        width:100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        #top-news{
+            width: 95%;
+           // border:1px solid blue;
+            h1{
+                font-weight: 600;
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
+                
             }
-            img{
-                width: 95%;
-                height: 95%;
-                object-fit: cover;
+        }
+        #news-container{
+            width:95%;
+            height: 100%;
+            //border:1px solid blue;
+            overflow: scroll;
+            overflow-x: hidden;
+            #news{
+                //border: 1px solid white;
+                width: 90%;
+                height: auto;
+                background-color: white;
+                border-radius: 10px;
+                margin: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                h3{
+                    width: 95%;
+                    padding: 5px;
+                    
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+                img{
+                    width: 95%;
+                    height: 95%;
+                    object-fit: cover;
+                }
+                #description{
+                    width:95%;
+                    padding: 5px;
+                    text-align: justify;
+                    font-family: Mulish, Roboto, "Helvetica Neue", sans-serif;
+                    color:#777;
+                }
+    
+    
             }
-            #description{
-                width:95%;
-                padding: 5px;
-                text-align: justify;
-                font-family: Mulish, Roboto, "Helvetica Neue", sans-serif;
-            }
-
-
         }
     }
+    
 }
 

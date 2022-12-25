@@ -3,35 +3,50 @@
 }
 
 main {
-  width: 100%;
-  height: 100%;
-  background-image: url(https://files.codingninjas.com/circut-9740.png), linear-gradient(#032d6b, #032d6b), linear-gradient(to left bottom, #032d6b 50%, #faf7f2 0px), linear-gradient(to right bottom, #032d6b 50%, #faf7f2 0px);
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  /*width:50%;
+    height: 100%;
+    border:1px solid red;
+    background-image: url(https://files.codingninjas.com/circut-9740.png), linear-gradient(rgb(3, 45, 107), rgb(3, 45, 107)), linear-gradient(to left bottom, rgb(3, 45, 107) 50%, rgb(250, 247, 242) 0px), linear-gradient(to right bottom, rgb(3, 45, 107) 50%, rgb(250, 247, 242) 0px);
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    margin-left: 25%;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    vertical-align: top;*/
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 25%;
+  margin-top: 4%;
   position: relative;
 }
 
-main #top-news {
-  width: 70%;
+main #box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-main #top-news h1 {
+main #box #top-news {
+  width: 95%;
+}
+
+main #box #top-news h1 {
   font-weight: 600;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
 }
 
-main #news-container {
-  width: 70%;
+main #box #news-container {
+  width: 95%;
   height: 100%;
   overflow: scroll;
   overflow-x: hidden;
 }
 
-main #news-container #news {
+main #box #news-container #news {
   width: 90%;
   height: auto;
   background-color: white;
@@ -43,21 +58,22 @@ main #news-container #news {
   flex-direction: column;
 }
 
-main #news-container #news h3 {
+main #box #news-container #news h3 {
   width: 95%;
   padding: 5px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-main #news-container #news img {
+main #box #news-container #news img {
   width: 95%;
   height: 95%;
   object-fit: cover;
 }
 
-main #news-container #news #description {
+main #box #news-container #news #description {
   width: 95%;
   padding: 5px;
   text-align: justify;
   font-family: Mulish, Roboto, "Helvetica Neue", sans-serif;
+  color: #777;
 }

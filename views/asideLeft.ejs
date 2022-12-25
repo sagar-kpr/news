@@ -1,0 +1,25 @@
+<link rel="stylesheet" type="text/css"  href="/css/aside.css">
+
+<aside id="left">
+    <div id="left-box">
+        <div id="recent-news">
+            <h1>Recent News</h1>
+            <hr>
+        </div>
+        <div id="left-news-container">
+            <%  for(let i=0; i< Math.floor(dbData.length/2); i++){ %>
+                <div id="left-news">
+                    <h3><%= dbData[i].title %></h3>
+                    <div id="left-description">
+                        <p><%= dbData[i].content %> <a href="<%= dbData[i].url %>" target="_blank">Read more...</a></p>
+                    </div>
+                </div>
+
+            <%} %>
+                
+        
+            
+        </div>
+    </div>
+
+</aside>

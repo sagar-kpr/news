@@ -1,0 +1,119 @@
+#left {
+  width: 25%;
+  height: 92%;
+  display: inline-block;
+  background-color: #F0F2F5;
+  overflow: scroll;
+  vertical-align: top;
+  position: fixed;
+  margin-top: 4%;
+}
+
+#left #left-box {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+#left #left-box #recent-news {
+  width: 95%;
+}
+
+#left #left-box #recent-news h1 {
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 25px;
+}
+
+#left #left-box #left-news-container {
+  width: 95%;
+  height: 100%;
+}
+
+#left #left-box #left-news-container #left-news {
+  width: 90%;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#left #left-box #left-news-container #left-news h3 {
+  width: 95%;
+  padding: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#left #left-box #left-news-container #left-news #left-description {
+  width: 95%;
+  padding: 5px;
+  text-align: justify;
+  font-family: Mulish, Roboto, "Helvetica Neue", sans-serif;
+  color: #777;
+}
+
+#right {
+  width: 25%;
+  height: 92%;
+  display: inline-block;
+  background-color: #F0F2F5;
+  overflow: scroll;
+  vertical-align: top;
+  position: fixed;
+  margin-top: 4%;
+}
+
+#right #right-box {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+#right #right-box #past-news {
+  width: 95%;
+}
+
+#right #right-box #past-news h1 {
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 25px;
+}
+
+#right #right-box #right-news-container {
+  width: 95%;
+  height: 100%;
+}
+
+#right #right-box #right-news-container #right-news {
+  width: 90%;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#right #right-box #right-news-container #right-news h3 {
+  width: 95%;
+  padding: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#right #right-box #right-news-container #right-news #right-description {
+  width: 95%;
+  padding: 5px;
+  text-align: justify;
+  font-family: Mulish, Roboto, "Helvetica Neue", sans-serif;
+  color: #777;
+}

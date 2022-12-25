@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
-mongoose.connect("mongodb://localhost/mynews");
+mongoose.connect(`mongodb+srv://sagarkpr:sagar123@cluster0.odss0vq.mongodb.net/?retryWrites=true&w=majority`);
 
 const db = mongoose.connection;
 

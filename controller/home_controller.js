@@ -1,15 +1,16 @@
 
 const NewsAPI = require('newsapi');
+const { castObject } = require('../models/news_schema');
 const newsapi = new NewsAPI('60d3cca075f3445c93f289dd4d3ab6c2');
 const News = require('../models/news_schema');
-
+var article;
 
 module.exports.home = async function (req, res) {
     await newsapi.v2.topHeadlines({
         country: 'in'
     }).then(async response => {
        
-        let article = response.articles;
+         article = response.articles;
         
         for(let i=0; i< article.length; i++){
             const data = {
@@ -26,24 +27,43 @@ module.exports.home = async function (req, res) {
                 data.url = 'not avail'
             }
             const test =  await News.findOne({title:data.title})
-            console.log('66660',article[i])
+            
             if(!test){
                 const newData =  new News(data);
                 newData.save();
-                console.log('888888',newData)
+                
             }
             
 
         }
        
     });
-    console.log('11111')
+    
     let news = await News.find();
     
     return res.render('Home',{
-        data:news
+        data:article,
+        dbData:news
     });
 
+}
+
+
+
+module.exports.search = async function(req,res){
+    
+     function find(news, key , value){
+        value = value.toLowerCase();
+        return  news.filter( (item) => item[key].toLowerCase().includes(value) )
+    }
+    var news = await News.find();
+    let filtered = find(news, 'content', req.body.search);
+    if(req.xhr){
+        return res.status(200).json({
+            data : filtered
+        })
+    }
+    
 }
 
 
