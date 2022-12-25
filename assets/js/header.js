@@ -1,20 +1,5 @@
-/*var sports = document.getElementById('Sports')
-var general = document.getElementById('General')
-var entertainment = document.getElementById('Entertainment')
 
-function checkButton() {  
-    if(sports.checked) { 
-        
-    } 
-    else if(general.checked) { 
-        console.log('geb check')
-    } 
-    else if(entertainment.checked) { 
-        console.log('enter check',entertainment.getAttribute('value'))
-    }
-    
-} */
-$('#button').click(function(){
+/*$('#button').click(function(){
     let sport = $('#Sports')
     let general = $('#General')
     let entertainment = $('#Entertainment')
@@ -97,4 +82,53 @@ $('#button').click(function(){
         }
         
     }
-})
+})*/
+
+
+
+
+
+
+{
+    let Filter = function(){
+      let filterform = $('#filterForm');
+      filterform.submit(function(e) {
+          e.preventDefault();
+          $.ajax({
+              type: 'post',
+              url: '/filter',
+              data: filterform.serialize(),
+              success : function(data){
+                  let filter = data.data;
+                  $('#inp').val('');
+                  $('#news-container').empty()
+                  for(let i=0; i< filter.length; i++){
+                      let newDom = createnewDom(filter[i])
+                      $('#news-container').prepend(newDom)
+                  }
+                  
+  
+              },
+              error : function(error){
+                  console.log(error.responseText)
+              }
+          })
+  
+      })
+    }   
+  
+    let createnewDom = function(data){
+      return $(`
+      <div id="news">
+          <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #777">Filtered by: ${data.category}</p>  
+          <h3>${data.title}</h3>
+          <img src="${data.image}"/>
+          <div id="description">
+              <p>${data.content} &nbsp<a href="${data.url}" target="_blank">Read more...</a></p>
+          </div>
+      </div>
+  `)
+    }
+  
+    Filter();
+  }

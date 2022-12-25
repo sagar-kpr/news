@@ -12,23 +12,29 @@
         <div id="filter-box">
             <span onclick="expand">Filter <i class="fa-solid fa-filter"></i></span>
             <div id="filter">
-                <div id="radio-btns">
-                    <div id="inp-box" >
-                        <input type="radio" id="Sports" name="common" value="sports">
-                        <label for="Sports">Sports</label>
-                    </div>
-                    <div id="inp-box">
-                        <input type="radio" id="General" name="common" value="general">
-                        <label for="General">General</label>
-                    </div>
-                    <div id="inp-box">
-                        <input type="radio" id="Entertainment" name="common" value="entertainment">
-                    <label for="Entertainment">Entertainment</label>
-                    </div>
-                    <div>
-                        <input type="button" id="button" value="Apply">
-                    </div>
-                </div>    
+                <form action="/filter" id="filterForm" method="post">
+                    <div id="radio-btns">
+                        <div id="inp-box" >
+                            <input type="radio" id="NDTVNews" name="common" value="NDTV News">
+                            <label for="NDTV News">NDTV News</label>
+                        </div>
+                        <div id="inp-box">
+                            <input type="radio" id="HindustanTimes" name="common" value="Hindustan Times">
+                            <label for="Hindustan Times">Hindustan Times</label>
+                        </div>
+                        <div id="inp-box">
+                            <input type="radio" id="News18" name="common" value="News18">
+                        <label for="News18">News18</label>
+                        </div>
+                        <div id="inp-box">
+                            <input type="radio" id="IndiaToday" name="common" value="India Today">
+                            <label for="IndiaToday">India Today</label>
+                        </div>
+                        <div>
+                            <input type="submit" id="button" value="Apply">
+                        </div>
+                    </div> 
+                </form>   
             </div>
         </div>
     </div>

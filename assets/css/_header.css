@@ -71,7 +71,7 @@ nav #inp-container form input[type='submit'] {
 }
 
 nav #inp-container #filter-box {
-  width: 100px;
+  width: 120px;
   position: relative;
   color: white;
   text-align: center;
@@ -101,7 +101,7 @@ nav #inp-container #filter-box #filter #radio-btns {
 }
 
 nav #inp-container #filter-box #filter #radio-btns div {
-  width: 150px;
+  width: 200px;
   display: flex;
   height: 35px;
   flex-direction: row;

@@ -9,15 +9,16 @@ module.exports.home = async function (req, res) {
     await newsapi.v2.topHeadlines({
         country: 'in'
     }).then(async response => {
-       
-         article = response.articles;
+       // console.log('ewewewe',response.articles[0].source['name'])
+        article = response.articles;
         
         for(let i=0; i< article.length; i++){
             const data = {
                 title: article[i].title,
                 image : article[i].urlToImage,
                 content: article[i].content,
-                url : article[i].url
+                url : article[i].url,
+                category : article[i].source['name']
             }
             if(!data.image){
                 data.image = 'not avail'
@@ -45,6 +46,7 @@ module.exports.home = async function (req, res) {
         data:article,
         dbData:news
     });
+    //return res.render('Home');
 
 }
 
@@ -60,11 +62,37 @@ module.exports.search = async function(req,res){
     let filtered = find(news, 'content', req.body.search);
     if(req.xhr){
         return res.status(200).json({
-            data : filtered
+            data : filtered,
+            name:req.body.search
         })
     }
     
 }
+
+
+
+
+module.exports.filter = async function(req,res){
+    function find(filterNews, key , value){
+       // value = value.toLowerCase();
+        return  filterNews.filter( (item) => item[key].includes(value) )
+    }
+    var filterNews = await News.find();
+    let filtered = find(filterNews, 'category', req.body.common);
+    if(req.xhr){
+        return res.status(200).json({
+            data : filtered
+        })
+    }
+}
+
+
+
+
+
+
+
+
 
 
 

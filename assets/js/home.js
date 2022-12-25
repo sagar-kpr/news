@@ -32,12 +32,12 @@
             type: 'post',
             url: '/search',
             data: searchform.serialize(),
-            success : function(data){
+            success : function(data,name){
                 let filter = data.data;
                 $('#inp').val('');
                 $('#news-container').empty()
                 for(let i=0; i< filter.length; i++){
-                    let newDom = createnewDom(filter[i])
+                    let newDom = createnewDom(filter[i], data.name)
                     $('#news-container').prepend(newDom)
                 }
                 
@@ -51,9 +51,10 @@
     })
   }   
 
-  let createnewDom = function(data){
+  let createnewDom = function(data, name){
     return $(`
     <div id="news">
+        <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #777">Searched by: ${name}</p>
         <h3>${data.title}</h3>
         <img src="${data.image}"/>
         <div id="description">
