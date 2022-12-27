@@ -102,6 +102,9 @@
                   let filter = data.data;
                   $('#inp').val('');
                   $('#news-container').empty()
+                  let paragraph = paradom(data)
+                  $('#top-news').empty()
+                  $('#top-news').append(paragraph)
                   for(let i=0; i< filter.length; i++){
                       let newDom = createnewDom(filter[i])
                       $('#news-container').prepend(newDom)
@@ -116,11 +119,17 @@
   
       })
     }   
+    let paradom = function(data){
+        return $(`
+        <h1>Top News</h1>
+        <hr>
+        <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #777">Filtered by: ${data.name}</p>
+        `)
+      }
   
     let createnewDom = function(data){
       return $(`
-      <div id="news">
-          <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #777">Filtered by: ${data.category}</p>  
+      <div id="news">  
           <h3>${data.title}</h3>
           <img src="${data.image}"/>
           <div id="description">

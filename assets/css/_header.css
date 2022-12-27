@@ -71,6 +71,7 @@ nav #inp-container form input[type='submit'] {
   background-color: black;
   color: white;
   border: none;
+  cursor: pointer;
 }
 
 nav #inp-container #filter-box {

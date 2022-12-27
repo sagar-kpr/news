@@ -32,12 +32,18 @@
             type: 'post',
             url: '/search',
             data: searchform.serialize(),
-            success : function(data,name){
+            success : function(data){
+
                 let filter = data.data;
                 $('#inp').val('');
                 $('#news-container').empty()
+                let paragraph = paradom(data)
+                $('#top-news').empty()
+                $('#top-news').append(paragraph)
                 for(let i=0; i< filter.length; i++){
-                    let newDom = createnewDom(filter[i], data.name)
+                    let newDom = createnewDom(filter[i])
+                   
+    
                     $('#news-container').prepend(newDom)
                 }
                 
@@ -51,10 +57,17 @@
     })
   }   
 
-  let createnewDom = function(data, name){
+  let paradom = function(data){
+    return $(`
+    <h1>Top News</h1>
+    <hr>
+    <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #777">Searched by: ${data.name}</p>
+    `)
+  }
+
+  let createnewDom = function(data){
     return $(`
     <div id="news">
-        <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #777">Searched by: ${name}</p>
         <h3>${data.title}</h3>
         <img src="${data.image}"/>
         <div id="description">

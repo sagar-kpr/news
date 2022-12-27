@@ -11,7 +11,7 @@ module.exports.home = async function (req, res) {
     }).then(async response => {
        // console.log('ewewewe',response.articles[0].source['name'])
         article = response.articles;
-        console.log(article)
+        //console.log(article)
         for(let i=0; i< article.length; i++){
             const data = {
                 title: article[i].title,
@@ -69,19 +69,22 @@ module.exports.home = async function (req, res) {
 
 
 module.exports.search = async function(req,res){
-    
-     function find(news, key , value){
-        value = value.toLowerCase();
-        return  news.filter( (item) => item[key].toLowerCase().includes(value) )
+    if(req.body.search){
+        function find(news, key , value){
+            value = value.toLowerCase();
+            return  news.filter( (item) => item[key].toLowerCase().includes(value) )
+        }
+        var news = await News.find();
+        let filtered = find(news, 'content', req.body.search);
+        if(req.xhr){
+            return res.status(200).json({
+                data : filtered,
+                name:req.body.search
+            })
+        }
+
     }
-    var news = await News.find();
-    let filtered = find(news, 'content', req.body.search);
-    if(req.xhr){
-        return res.status(200).json({
-            data : filtered,
-            name:req.body.search
-        })
-    }
+     
     
 }
 
@@ -89,17 +92,23 @@ module.exports.search = async function(req,res){
 
 
 module.exports.filter = async function(req,res){
-    function find(filterNews, key , value){
-       // value = value.toLowerCase();
-        return  filterNews.filter( (item) => item[key].includes(value) )
+    if(req.body.common){
+        function find(filterNews, key , value){
+            // value = value.toLowerCase();
+             return  filterNews.filter( (item) => item[key].includes(value) )
+         }
+         var filterNews = await News.find();
+         let filtered = find(filterNews, 'category', req.body.common);
+         if(req.xhr){
+             return res.status(200).json({
+                 data : filtered,
+                 name:req.body.common
+
+             })
+         }
+
     }
-    var filterNews = await News.find();
-    let filtered = find(filterNews, 'category', req.body.common);
-    if(req.xhr){
-        return res.status(200).json({
-            data : filtered
-        })
-    }
+    
 }
 
 
