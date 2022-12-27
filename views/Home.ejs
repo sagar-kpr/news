@@ -8,10 +8,11 @@
             <hr>
         </div>
         <div id="news-container">
-            <%  for(let i=0; i< data.length; i++){ %>
+            <% let len = data.length - 1 %>
+            <%  for(let i=len; i > 0 ; i--){ %>
                 <div id="news">
                     <h3><%= data[i].title %></h3>
-                    <img src="<%= data[i].urlToImage %>"/>
+                    <img src="<%= data[i].image %>"/>
                     <div id="description">
                         <p><%= data[i].content %> <a href="<%= data[i].url %>" target="_blank">Read more...</a></p>
                     </div>

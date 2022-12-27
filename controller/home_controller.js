@@ -59,7 +59,7 @@ module.exports.home = async function (req, res) {
     let news = await News.find();
     
     return res.render('Home',{
-        data:article,
+        data:news,
         dbData:news
     });
     //return res.render('Home');
@@ -69,13 +69,14 @@ module.exports.home = async function (req, res) {
 
 
 module.exports.search = async function(req,res){
+    let filtered;
     if(req.body.search){
-        function find(news, key , value){
-            value = value.toLowerCase();
-            return  news.filter( (item) => item[key].toLowerCase().includes(value) )
-        }
         var news = await News.find();
-        let filtered = find(news, 'content', req.body.search);
+        filtered = find(news, 'content', req.body.search);
+        if(filtered.length == 0){
+            filtered = find(news, 'title', req.body.search);
+        }
+        //console.log('2323',filtered)
         if(req.xhr){
             return res.status(200).json({
                 data : filtered,
@@ -84,8 +85,11 @@ module.exports.search = async function(req,res){
         }
 
     }
+    function find(news, key , value){
+        value = value.toLowerCase();
+        return  news.filter( (item) => item[key].toLowerCase().includes(value) ) 
+    }
      
-    
 }
 
 

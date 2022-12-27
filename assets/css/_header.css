@@ -55,6 +55,7 @@ nav #inp-container form input[type='search'] {
   font-size: 1.2rem;
   border-radius: 5px 0 0 5px;
   border: none;
+  border: 1px solid black;
 }
 
 nav #inp-container form input[type='search']:focus {
@@ -68,10 +69,16 @@ nav #inp-container form input[type='submit'] {
   font-size: 1.2rem;
   margin-right: 5px;
   border-radius: 0 5px 5px 0;
-  background-color: black;
-  color: white;
-  border: none;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
   cursor: pointer;
+}
+
+nav #inp-container form input[type='submit']:hover {
+  background-color: #454242;
+  border: none;
+  color: white;
 }
 
 nav #inp-container #filter-box {
@@ -114,20 +121,26 @@ nav #inp-container #filter-box #filter #radio-btns div {
   display: flex;
   height: 35px;
   flex-direction: row;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   border-radius: 5px;
 }
 
-nav #inp-container #filter-box #filter #radio-btns div input[type=submit] {
-  margin: 5px;
-  background-color: black;
-  color: white;
+nav #inp-container #filter-box #filter #radio-btns div #button {
+  background-color: white;
+  color: black;
   height: 35px;
   width: 95%;
-  margin-bottom: 10px;
+  margin-left: 4px;
   border-radius: 10px;
   cursor: pointer;
+  border: 1px solid black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav #inp-container #filter-box #filter #radio-btns div #button:hover {
+  background-color: #454242;
+  border: none;
+  color: white;
 }
 
 nav #inp-container #filter-box #filter #radio-btns div label {
