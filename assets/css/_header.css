@@ -156,7 +156,7 @@ nav #inp-container #filter-box:hover #filter {
   }
   nav #inp-container {
     width: 100%;
-    border: 1px solid white;
+    margin: 5px 0 5px 0;
   }
   nav #inp-container form {
     width: 85%;

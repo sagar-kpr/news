@@ -11,7 +11,7 @@ module.exports.home = async function (req, res) {
     }).then(async response => {
        // console.log('ewewewe',response.articles[0].source['name'])
         article = response.articles;
-        
+        console.log(article)
         for(let i=0; i< article.length; i++){
             const data = {
                 title: article[i].title,
@@ -20,13 +20,29 @@ module.exports.home = async function (req, res) {
                 url : article[i].url,
                 category : article[i].source['name']
             }
-            if(!data.image){
-                data.image = 'not avail'
-            }else if(!data.content){
+            if(!data.content || !data.image || !data.url|| !data.category){
+                if(!data.content){
+                    data.content = 'not avail'
+                }
+                if(!data.image){
+                    data.image = 'not avail'
+                }
+                if(!data.url){
+                    data.url = 'not avail'
+                }
+                if(!data.category){
+                    data.category= 'not avail'
+                }
+            }
+            /*if(!data.content){
                 data.content = 'not avail'
+            }else if(!data.image){
+                data.image = 'not avail'
             }else if(!data.url){
                 data.url = 'not avail'
-            }
+            }else if(!data.category){
+                data.category= 'not avail'
+            }*/
             const test =  await News.findOne({title:data.title})
             
             if(!test){
